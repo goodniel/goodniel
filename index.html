@@ -31,7 +31,40 @@
 	<p>Elindult a honlapunk! :)</p>
 	<p>Bizonyára azért jöttél az oldalra, mert mghívót kaptál tőlünk! Ennek nagyon örülön, nyugodtan nézz körbe, reméljük minden infót megtalálsz!</p>
 	<p>Találkozunk (legkésőbb) az esküvőnkön!</p>
-	<div class="counter_canvas"><iframe id="counter_canvas" src="http://free.timeanddate.com/countdown/i76i3r6m/n50/cf105/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcfff/tcf1d8e7/fs100/szw320/szh135/tatEnnyi%20id%C5%91%20van%20h%C3%A1tra%20az%20esk%C3%BCv%C5%91nkig%3A/tac000/tpc000/matNagyboldogasszony%20Pl%C3%A9b%C3%A1nia%20-%20Fony%C3%B3d/mac000/mpc000/iso2020-06-13T16:00:00" allowTransparency="true" frameborder="0" width="320" height="135"></iframe></div>
+	<!--<div class="counter_canvas"><iframe id="counter_canvas" src="http://free.timeanddate.com/countdown/i76i3r6m/n50/cf105/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcfff/tcf1d8e7/fs100/szw320/szh135/tatEnnyi%20id%C5%91%20van%20h%C3%A1tra%20az%20esk%C3%BCv%C5%91nkig%3A/tac000/tpc000/matNagyboldogasszony%20Pl%C3%A9b%C3%A1nia%20-%20Fony%C3%B3d/mac000/mpc000/iso2020-06-13T16:00:00" allowTransparency="true" frameborder="0" width="320" height="135"></iframe></div>-->
+	<p>Ennyi idő van hátra az esküvőnkig:</p>
+	<strong><p id="demo"></p></strong>
+
+	<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jun 13, 2020 16:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + " nap " + hours + " óra "
+  + minutes + " perc " + seconds + " másodperc ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
 </div>
 <aside>
