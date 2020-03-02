@@ -1,0 +1,8 @@
+﻿/* alap stílus kiegészítése*/
+@import url('alap.css');
+
+/*navigáció*/
+
+nav ul a:nth-of-type(2):link {color:rgba(255,128,0,1.0); text-decoration:underline;}
+nav ul a:nth-of-type(2):visited  {color:rgba(255,128,0,1.0); text-decoration:underline;}
+nav ul a:nth-of-type(2):hover {color:rgba(255,128,0,1.0); text-decoration:underline;}

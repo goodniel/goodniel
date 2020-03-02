@@ -1,0 +1,305 @@
+/* alap stílus */
+
+/*betűtípus importálás*/
+ @import 'https://fonts.googleapis.com/css?family=Oswald';
+
+ 
+body {
+	font-family:Arial, Verdana, Helvetica, sans-serif, Open Sans;  /* betűtípus beállítás */
+	background-color:rgba(150, 112, 78, 0.9);					/* fekete háttérszín */
+	margin-bottom:50px;	/*alsó margó beállítása, hogy látszódjon a vízszintesen ismétlődő háttérkép */
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,h2 {
+    font-family: 'Oswald', sans-serif;  /* betűtípus beállítása */
+	text-shadow:3px 3px 3px #ccc;		/* szövegárnyékolás jobbra, lefele esik az árnyék*/
+}
+
+p {
+ text-align:justify;  	/* sorkizárt igazítás */
+ }
+ 
+ 
+/* oldalszerkezet */
+ 
+
+header, main, footer, #header, #tartalom, #footer {
+	width:70%;				/* szélesség */
+	min-width:400px;		/* minimális szélesség */
+	max-width:1000px;		/* maximális szélesség */
+	margin-left:auto;		
+	margin-right:auto;
+	/* a margin-left: auto, margin-right: auto; beállítások középre igazítást jelentenek a blokkok esetén */
+	margin-top:0;			/* felső margó */
+	margin-bottom:0;		/* alsó margó */
+	padding:10px;			/* kitöltés */
+}
+	
+header, #header {
+	border-radius: 10px 10px 0 0 ; 		/*bal felső és jobb felső sarok lekerekítése */
+	padding-bottom:0;					/* alsó kitöltés lenullázása */
+	position:relative;
+	height:400px;
+	background-image:url('../kepek/header_korfu_2.png');
+	background-position:center top/*, left bottom*/;	/* háttérkép kezdőpozíciók beállítása */
+	background-repeat: no-repeat;
+	background-size:cover;	
+	}
+
+/*navigáció*/
+.kipozicional {background:rgba(0,0,0,0.0);}
+.kipozicional a {position:absolute; left:-9999px;}				/* kipozícionáljuk a képernyőről a blokkot */
+.kipozicional a:focus {position:static; background:rgba(0,0,0,0.0);}
+
+header nav {
+	background-color: rgba(150, 112, 78, 0.65); 			/* háttérszín beállítása */
+	/*padding:10px 10px;*/		/* kitöltés beállítása: felső jobb alsó bal sorrendben */
+	width:100%;				/* szélesség */
+	min-width:400px;		/* minimális szélesség */
+	max-width:1000px;
+	margin-left:auto;				/* mivel a szülő elem bal és jobb oldali kitöltése 10px, és a doboz szélességének a szülő elem bal oldalánál kell kezdődnie (illetve jobb oldali végéig kell tartania), kénytelenek vagyunk -10 képpontot beállítani  */
+	margin-right:auto;				/* lásd a fenti indoklást. */
+	vertical-align: baseline;
+	position: absolute;
+	bottom: 0%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	
+}
+
+nav ul li  {
+	display:inline;				/* soron belüli elemmé alakítjuk a listaelemet */
+	white-space: nowrap;
+	padding:5px 5px 5px 5px;
+	font-variant:small-caps;	/* kiskapitális betűtípus*/
+	font-size:1.5em;			/* betűméret legyen az alap betűméret 1,5-szerese*/
+	margin-right:1em;			/* jobb oldali margó*/
+	font-family: 'Arial';
+	color: white;
+	vertical-align: baseline;
+}
+
+nav ul a li:hover {color:white; text-decoration:none;background-color:rgba(50,50,50);border-radius: 3px 3px 3px 3px;transition: background linear 0.2s;}
+
+a:link {color:black;text-decoration:none;}
+a:visited  {color:black;text-decoration:none;}
+a:hover {color:gray;text-decoration:none;}
+
+a#nagybetu span {		/* a gyengénlátóknak szóló ikon beállítása */
+	background-image:url("../kepek/ikonkeszlet.png");	/* ikonokat tartalmazó háttér beállítása*/
+	background-repeat:no-repeat;		/*ne ismétlődjön a háttér */
+	display:inline-block;		/* soron belüli elem legyen, de méretet lehessen beállítani*/
+	width:60px;		/* szélesség */
+	height:60px;		/* magasság*/
+	background-position:-240px 0px;		/* kép pozícionálás*/
+	float:right;							/* balra lebegtetés*/
+}
+
+a#normalbetu {display: none;}		/* eltüntetjük a Normál változat linket, és csak a Nagybetűs változat marad látható*/
+
+/*navigáció vége*/
+
+main, footer {
+	background-color:rgba(255, 249, 245, 0.9);
+}
+
+footer {
+	border-top-style:dashed;
+	border-radius: 0 0 10px 10px; /* bal alsó és jobb alsó szegély lekerekítése */
+	background-color:rgba(150, 112, 78, 0.9);
+	}
+
+article, .article  {
+	margin:0 2em;					/* margó beállítás, felül, és alul 0, bal és jobb oldalon kétszeres */
+	padding-bottom:20px;			/* alsó kitöltés beállítása */
+	overflow:hidden; 				
+	/* azért kell beállítani a hidden értéket, mert különben kilógna belőle a lebegtetett elem */
+}
+
+#rendezvenyszervezes, #kapcsolat {
+	-webkit-column-count: 2;
+}
+
+.kepek figure {
+	display:inline-table;
+	position:relative;
+}
+
+img {
+	position:relative;
+}
+
+#kepek {
+	display:inline;
+}
+
+#rendezvenyszervezes figure img	{
+	padding-top:30px;
+	max-width: 450px;
+	height: auto;
+}
+
+figure {	
+	text-align:center;			/* szöveg középre igazítása */
+}
+
+#tortenetunk aside {
+	float:right;
+}
+
+#tortenetunk figure img	 {
+	max-width: 300px;
+	height: auto;
+	border-radius: 10px;
+	
+}
+
+article#bufe table {
+	border-collapse:collapse;	/* táblázat szegély összecsukása*/
+	border:3px double gray;		/* szegély beállítás a táblázatra */
+	margin:0 auto;				/* táblázat középre igazítása */
+}
+
+article#bufe table th {background-color:#fdd295 }  /* háttérszín beállítás */
+
+article#bufe table td,article#bufe table th {
+	border:1px solid gray;				/* cella és fejléc szegélyek */
+	padding:5px;						/* kitöltés */
+	text-align:center;
+}
+
+details {caption-side: bottom;}
+
+.campvideo{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 15px;
+	height: 0;
+}
+.campvideo iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.xhtml {
+	text-align:center;
+	padding-top:5px;
+}
+
+.mapouter {
+	position:relative;
+	margin:auto;
+	text-align:right;
+	height:350px;
+	width:350px;
+}
+
+.gmap_canvas {
+	overflow:hidden;
+	background:none!important;
+	height:350px;
+	width:350px;
+}
+
+#ajanlat {
+	border-radius: 5px;
+	width:70%;
+	min-width:450px;
+	background-color:#cac8bc;
+	margin-bottom:10px;
+}
+
+footer div,#copyright {
+	font-size:0.9em;
+	padding:20px 20px;
+	display:inline-block;
+	text-align:left;
+}
+
+#insta, #facebook {
+	position:initial;
+}
+
+#insta span {
+	background-image:url("../kepek/ig_icon.png");	/* ikonokat tartalmazó háttér beállítása*/
+	background-repeat:no-repeat;		/*ne ismétlődjön a háttér */
+	background-size:30px 30px;
+	display:inline-block;		/* soron belüli elem legyen, de méretet lehessen beállítani*/
+	margin-top:12px;
+	margin-right:40px;
+	width:30px;
+	height:30px;
+	float:right;
+}
+
+#facebook span {
+	background-image:url("../kepek/fb_icon2.png");	/* ikonokat tartalmazó háttér beállítása*/
+	background-repeat:no-repeat;		/*ne ismétlődjön a háttér */
+	background-size:30px 30px;
+	display:inline-block;		/* soron belüli elem legyen, de méretet lehessen beállítani*/
+	margin-top:12px;
+	margin-right:20px;
+	width:30px;
+	height:30px;
+	float:right;
+}
+
+/* oldalszerkezet vége */
+
+/* nyomtatás média beállítása */
+
+@media print {
+
+body {
+font-family:'Times New Roman', Times, serif;  /* talpas betűtípus beállítása*/
+margin:0cm;			/* margó megadás cm-ben*/
+}
+
+header, footer, nav, #header, #footer, #nav {
+	width:1%;		/* teljes szélességű blokkok legyenek */
+	padding:0;
+	height:1%;
+	display:none;
+}
+main, #tartalom {
+	width:100%;		/* teljes szélességű blokkok legyenek */
+	padding:0;		/* kitöltés 0*/
+		}
+
+a:after { content: " (" attr(href) ")";}  /* a linkek után jelenjen meg a href paraméter értéke*/
+}
+
+/* nyomtatás média vége */
+
+/* 1200px alatti szélesség esetén */
+@media screen and (max-width: 1200px) 
+{
+	main#kapcsolat{-webkit-column-count: 1;}
+}
+/* 910px alatti szélesség esetén */
+@media screen and (max-width: 970px) 
+{
+	footer{-webkit-column-count: 2;}
+	#tortenetunk aside {float:none;}
+	#kepek {
+	-webkit-column-count: 2;
+	}
+}
+/* 700px alatti szélesség esetén */
+@media screen and (max-width: 700px) 
+{
+
+#nav #oldalmenu ul li {display:block} 	/* oldalmenü elemei blokkszintűek legyenek, ne kerüljenek egymás mellé */
+article#rendezvenyszervezes {	-webkit-column-count: 1;}
+article#rendezvenyek {	-webkit-column-count: 1;}
+#kepek {
+	-webkit-column-count: 1;
+}
+
+}
+/* 700px alatti szélesség vége */

@@ -1,0 +1,6 @@
+﻿/* alap stílus kiegészítése*/
+@import url('alap.css');
+
+/*body*/
+
+body {background-color:lightgray;}
