@@ -277,6 +277,8 @@ footer div,#copyright {
 	#kepek {
 	-webkit-column-count: 2;
 	}
+	#templom {	-webkit-column-count: 1;}
+	#dam {	-webkit-column-count: 1;}
 }
 /* 700px alatti szélesség esetén */
 @media screen and (max-width: 700px) 
@@ -288,6 +290,7 @@ article#rendezvenyek {	-webkit-column-count: 1;}
 #idezet {
 	-webkit-column-count: 1;
 }
-
+#templom {	-webkit-column-count: 1;}
+#dam {	-webkit-column-count: 1;}
 }
 /* 700px alatti szélesség vége */
