@@ -6,7 +6,7 @@
  
 body {
 	font-family:Arial, Verdana, Helvetica, sans-serif, Open Sans;  /* betűtípus beállítás */
-	background-color:rgba(150, 112, 78, 0.9);					/* fekete háttérszín */
+	background-color:rgba(236, 193, 155, 0.9);					/* fekete háttérszín */
 	margin-bottom:50px;	/*alsó margó beállítása, hogy látszódjon a vízszintesen ismétlődő háttérkép */
 	-webkit-font-smoothing: antialiased;
 }
@@ -17,7 +17,7 @@ h1,h2 {
 }
 
 p {
- text-align:justify;  	/* sorkizárt igazítás */
+ /*text-align:justify;  	 sorkizárt igazítás */
  }
  
  
@@ -53,7 +53,9 @@ header, #header {
 .kipozicional a:focus {position:static; background:rgba(0,0,0,0.0);}
 
 header nav {
-	background-color: rgba(150, 112, 78, 0.65); 			/* háttérszín beállítása */
+	/*background-color: rgba(150, 112, 78, 0.65);*/	/* háttérszín beállítása */
+	/*background-color: rgba(187, 145, 109, 0.65); */
+	background-color: rgba(219, 152, 93, 0.65); 
 	/*padding:10px 10px;*/		/* kitöltés beállítása: felső jobb alsó bal sorrendben */
 	width:100%;				/* szélesség */
 	min-width:400px;		/* minimális szélesség */
@@ -73,12 +75,14 @@ nav ul li  {
 	display:inline;				/* soron belüli elemmé alakítjuk a listaelemet */
 	white-space: nowrap;
 	padding:5px 5px 5px 5px;
-	font-variant:small-caps;	/* kiskapitális betűtípus*/
-	font-size:1.5em;			/* betűméret legyen az alap betűméret 1,5-szerese*/
+	/*font-variant:small-caps;*/	/* kiskapitális betűtípus*/
+	font-size:1.3em;			/* betűméret legyen az alap betűméret 1,5-szerese*/
 	margin-right:1em;			/* jobb oldali margó*/
 	font-family: 'Arial';
+	font-style: normal;
 	color: white;
 	vertical-align: baseline;
+	/*font-weight: bold;*/
 }
 
 nav ul a li:hover {color:white; text-decoration:none;background-color:rgba(50,50,50);border-radius: 3px 3px 3px 3px;transition: background linear 0.2s;}
@@ -87,28 +91,19 @@ a:link {color:black;text-decoration:none;}
 a:visited  {color:black;text-decoration:none;}
 a:hover {color:gray;text-decoration:none;}
 
-a#nagybetu span {		/* a gyengénlátóknak szóló ikon beállítása */
-	background-image:url("../kepek/ikonkeszlet.png");	/* ikonokat tartalmazó háttér beállítása*/
-	background-repeat:no-repeat;		/*ne ismétlődjön a háttér */
-	display:inline-block;		/* soron belüli elem legyen, de méretet lehessen beállítani*/
-	width:60px;		/* szélesség */
-	height:60px;		/* magasság*/
-	background-position:-240px 0px;		/* kép pozícionálás*/
-	float:right;							/* balra lebegtetés*/
-}
-
-a#normalbetu {display: none;}		/* eltüntetjük a Normál változat linket, és csak a Nagybetűs változat marad látható*/
-
 /*navigáció vége*/
 
-main, footer {
+main {
 	background-color:rgba(255, 249, 245, 0.9);
+	margin:0 2em;					/* margó beállítás, felül, és alul 0, bal és jobb oldalon kétszeres */
+	padding-bottom:20px;			/* alsó kitöltés beállítása */
+	overflow:hidden; 	
 }
 
 footer {
 	border-top-style:dashed;
 	border-radius: 0 0 10px 10px; /* bal alsó és jobb alsó szegély lekerekítése */
-	background-color:rgba(150, 112, 78, 0.9);
+	background-color:rgba(228, 167, 114, 0.8);
 	}
 
 article, .article  {
@@ -118,7 +113,21 @@ article, .article  {
 	/* azért kell beállítani a hidden értéket, mert különben kilógna belőle a lebegtetett elem */
 }
 
-#rendezvenyszervezes, #kapcsolat {
+#idezet {
+	-webkit-column-count: 2;
+	font-style: italic;
+}
+
+#szamlalo {
+	text-align: center;
+	font-size:2.0em;
+}
+
+#angol {
+	-webkit-column-break-after: always;
+}
+
+#kapcsolat {
 	-webkit-column-count: 2;
 }
 
@@ -135,26 +144,12 @@ img {
 	display:inline;
 }
 
-#rendezvenyszervezes figure img	{
-	padding-top:30px;
-	max-width: 450px;
-	height: auto;
-}
 
 figure {	
 	text-align:center;			/* szöveg középre igazítása */
 }
 
-#tortenetunk aside {
-	float:right;
-}
 
-#tortenetunk figure img	 {
-	max-width: 300px;
-	height: auto;
-	border-radius: 10px;
-	
-}
 
 article#bufe table {
 	border-collapse:collapse;	/* táblázat szegély összecsukása*/
@@ -186,11 +181,6 @@ details {caption-side: bottom;}
 	height: 100%;
 }
 
-.xhtml {
-	text-align:center;
-	padding-top:5px;
-}
-
 .mapouter {
 	position:relative;
 	margin:auto;
@@ -204,14 +194,6 @@ details {caption-side: bottom;}
 	background:none!important;
 	height:350px;
 	width:350px;
-}
-
-#ajanlat {
-	border-radius: 5px;
-	width:70%;
-	min-width:450px;
-	background-color:#cac8bc;
-	margin-bottom:10px;
 }
 
 footer div,#copyright {
@@ -251,30 +233,6 @@ footer div,#copyright {
 
 /* oldalszerkezet vége */
 
-/* nyomtatás média beállítása */
-
-@media print {
-
-body {
-font-family:'Times New Roman', Times, serif;  /* talpas betűtípus beállítása*/
-margin:0cm;			/* margó megadás cm-ben*/
-}
-
-header, footer, nav, #header, #footer, #nav {
-	width:1%;		/* teljes szélességű blokkok legyenek */
-	padding:0;
-	height:1%;
-	display:none;
-}
-main, #tartalom {
-	width:100%;		/* teljes szélességű blokkok legyenek */
-	padding:0;		/* kitöltés 0*/
-		}
-
-a:after { content: " (" attr(href) ")";}  /* a linkek után jelenjen meg a href paraméter értéke*/
-}
-
-/* nyomtatás média vége */
 
 /* 1200px alatti szélesség esetén */
 @media screen and (max-width: 1200px) 
@@ -295,9 +253,9 @@ a:after { content: " (" attr(href) ")";}  /* a linkek után jelenjen meg a href 
 {
 
 #nav #oldalmenu ul li {display:block} 	/* oldalmenü elemei blokkszintűek legyenek, ne kerüljenek egymás mellé */
-article#rendezvenyszervezes {	-webkit-column-count: 1;}
+article#kezdolap {	-webkit-column-count: 1;}
 article#rendezvenyek {	-webkit-column-count: 1;}
-#kepek {
+#idezet {
 	-webkit-column-count: 1;
 }
 
