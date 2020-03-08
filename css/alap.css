@@ -20,7 +20,6 @@ p {
  /*text-align:justify;  	 sorkizárt igazítás */
  }
  
- 
 /* oldalszerkezet */
  
 
@@ -91,6 +90,10 @@ a:link {color:black;text-decoration:none;}
 a:visited  {color:black;text-decoration:none;}
 a:hover {color:gray;text-decoration:none;}
 
+#tartalom a:link {color:rgb(27, 134, 0);text-decoration:none;}
+#tartalom a:visited  {color:rgb(175, 27, 16);text-decoration:none;}
+#tartalom a:hover {color:rgb(255, 255, 255); text-decoration:none;background-color:rgba(50,50,50);border-radius: 3px 3px 3px 3px;transition: background linear 0.2s;}
+
 /*navigáció vége*/
 
 main {
@@ -121,10 +124,44 @@ article, .article  {
 #szamlalo {
 	text-align: center;
 	font-size:2.0em;
+	line-height: 70%;
+}
+#kezdolap h1 {
+	text-align: center;
 }
 
 #angol {
 	-webkit-column-break-after: always;
+}
+
+#eskuvo {
+	text-align: justify;
+}
+
+#templom {
+	-webkit-column-count: 2;
+	column-gap: 30px;
+	
+}
+
+#dam {
+	-webkit-column-count: 2;
+	column-gap: 30px;
+}
+/*#mapouter_temp {*/
+.gmap_canvas_temp {
+	-webkit-column-break-before: always;
+	align-content: center;
+	position: relative;
+	font-style: italic;
+	text-align: center;
+}
+.gmap_canvas_dam {
+	-webkit-column-break-after: always;
+	align-content: center;
+	position: relative;
+	font-style: italic;
+	text-align: center;
 }
 
 #kapcsolat {
@@ -185,13 +222,6 @@ details {caption-side: bottom;}
 	position:relative;
 	margin:auto;
 	text-align:right;
-	height:350px;
-	width:350px;
-}
-
-.gmap_canvas {
-	overflow:hidden;
-	background:none!important;
 	height:350px;
 	width:350px;
 }
