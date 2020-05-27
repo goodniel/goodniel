@@ -179,7 +179,8 @@ article,
   -webkit-column-break-after: always;
 }
 
-#eskuvo {
+#eskuvo,
+#szallas {
   text-align: justify;
 }
 
@@ -191,6 +192,7 @@ article,
 #dam {
   -webkit-column-count: 2;
   column-gap: 30px;
+  text-align: justify;
 }
 
 .mapouter_temp {
@@ -212,10 +214,6 @@ article,
   position: relative;
   font-style: italic;
   text-align: center;
-}
-
-#kapcsolat {
-  -webkit-column-count: 2;
 }
 
 .kepek figure {
